@@ -39,11 +39,11 @@
 - user: name=zookeeper group=zookeeper system=yes
 
 - name: Change ownership on zookeeper directory.
-  file: path={{zookeeper_dir}} state=directory owner=zookeeper group=zookeeper
+  file: path={{zookeeper_dir}} state=directory owner=zookeeper group=zookeeper recurse=yes
   tags: bootstrap
 
 - name: "Create zookeeper {{item}} directory."
-  file: path={{item}} state=directory owner=zookeeper group=zookeeper
+  file: path={{item}} state=directory owner=zookeeper group=zookeeper recurse=yes
   tags: bootstrap
   with_items:
     - "{{data_dir}}"
