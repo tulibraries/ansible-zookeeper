@@ -11,7 +11,7 @@
   register: zookeeper_tarball_script
 
 - name: Download zookeeper from S3
-  s3:
+  amazon.aws.aws_s3:
     mode: get
     bucket: "{{zookeeper_archive_s3_bucket}}"
     object: "{{zookeeper_archive_s3_object}}"
