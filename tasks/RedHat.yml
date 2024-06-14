@@ -2,7 +2,8 @@
 - name: Install OS Packages
   yum: name={{ item }} state=present
   with_items:
-    - libselinux-python
+    - python3-libselinux
+    - tar
 
 - include_tasks: tarball.yml
 
